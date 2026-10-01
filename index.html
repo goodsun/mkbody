@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>mkbody - 栄養素管理</title>
+<style>
+  :root {
+    --bg: #faf9f6;
+    --fg: #2b2b2b;
+    --muted: #8a8a8a;
+    --line: #e3e0d8;
+    --head-bg: #f0eee8;
+    --accent: #3a7d5c;
+    --row-hover: #f3f1ea;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1e1e1c;
+      --fg: #e8e6e0;
+      --muted: #9a9892;
+      --line: #3a3934;
+      --head-bg: #2a2925;
+      --accent: #6fbf94;
+      --row-hover: #2e2d28;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: "Hiragino Sans", "Noto Sans JP", sans-serif;
+    line-height: 1.6;
+  }
+  header {
+    padding: 1.5rem 1.25rem 0.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  h1 { margin: 0; font-size: 1.4rem; }
+  h1 span { color: var(--accent); }
+  .sub { color: var(--muted); font-size: 0.85rem; margin-top: 0.25rem; }
+  main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0.75rem 1.25rem 3rem;
+  }
+  .table-wrap {
+    overflow-x: auto;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+  }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 0.82rem;
+    white-space: nowrap;
+  }
+  th, td {
+    padding: 0.45rem 0.7rem;
+    border-bottom: 1px solid var(--line);
+    text-align: right;
+  }
+  th:first-child, td:first-child,
+  th:nth-child(2), td:nth-child(2) {
+    text-align: left;
+  }
+  thead th {
+    background: var(--head-bg);
+    position: sticky;
+    top: 0;
+    font-weight: 600;
+  }
+  td:first-child {
+    position: sticky;
+    left: 0;
+    background: var(--bg);
+    font-weight: 600;
+  }
+  tbody tr:hover td { background: var(--row-hover); }
+  tbody tr:last-child td { border-bottom: none; }
+  .empty { color: var(--muted); }
+  td a { color: var(--accent); text-decoration: none; }
+  td a:hover { text-decoration: underline; }
+  #status { color: var(--muted); font-size: 0.85rem; padding: 1rem 0; }
+</style>
+</head>
+<body>
+<header>
+  <h1>mkbody <span>栄養素管理</span></h1>
+  <div class="sub">1食分あたりの栄養素データ（出典: 食品ラベル / 日本食品標準成分表）</div>
+</header>
+<main>
+  <div id="status">読み込み中...</div>
+  <div class="table-wrap" hidden>
+    <table>
+      <thead></thead>
+      <tbody></tbody>
+    </table>
+  </div>
+</main>
+<script>
+function parseCSV(text) {
+  // 現状のデータはクォートなしの単純なCSV。空行は無視する。
+  return text.trim().split(/\r?\n/).map(line => line.split(','));
+}
+
+function render(rows) {
+  const [header, ...body] = rows;
+  const thead = document.querySelector('thead');
+  const tbody = document.querySelector('tbody');
+
+  const tr = document.createElement('tr');
+  for (const h of header) {
+    const th = document.createElement('th');
+    th.textContent = h;
+    tr.appendChild(th);
+  }
+  thead.appendChild(tr);
+
+  const imageCol = header.indexOf('画像ファイル');
+  for (const row of body) {
+    const tr = document.createElement('tr');
+    row.forEach((cell, i) => {
+      const td = document.createElement('td');
+      if (cell === '') {
+        td.textContent = '—';
+        td.className = 'empty';
+      } else if (i === imageCol) {
+        const a = document.createElement('a');
+        a.href = 'rawdata/' + cell;
+        a.target = '_blank';
+        a.rel = 'noopener';
+        a.textContent = 'ラベル';
+        td.appendChild(a);
+      } else {
+        td.textContent = cell;
+      }
+      tr.appendChild(td);
+    });
+    tbody.appendChild(tr);
+  }
+}
+
+fetch('nutrition.csv')
+  .then(res => {
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    return res.text();
+  })
+  .then(text => {
+    render(parseCSV(text));
+    document.getElementById('status').hidden = true;
+    document.querySelector('.table-wrap').hidden = false;
+  })
+  .catch(err => {
+    document.getElementById('status').textContent =
+      'nutrition.csv の読み込みに失敗しました: ' + err.message;
+  });
+</script>
+</body>
+</html>
