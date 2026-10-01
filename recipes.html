@@ -85,6 +85,7 @@
   article ul, article ol { padding-left: 1.4rem; }
   article li { margin: 0.2rem 0; }
   article a { color: var(--accent); }
+  article img { max-width: 100%; height: auto; border-radius: 6px; margin: 0.5rem 0; }
   .md-table-wrap { overflow-x: auto; }
   article table {
     border-collapse: collapse;
@@ -126,6 +127,11 @@ function escapeHTML(s) {
 function inline(s) {
   return escapeHTML(s)
     .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+    // 画像はmdがrecipes/配下にある前提で相対パスを補正する
+    .replace(/!\[(.*?)\]\((.+?)\)/g, (m, alt, src) => {
+      const fixed = /^(https?:|\/)/.test(src) ? src : 'recipes/' + src;
+      return `<a href="${fixed}" target="_blank" rel="noopener"><img src="${fixed}" alt="${alt}" loading="lazy"></a>`;
+    })
     .replace(/\[(.+?)\]\((.+?)\)/g, (m, text, href) =>
       `<a href="${href.replace(/\.md$/, '')}" data-md="${href}">${text}</a>`);
 }
