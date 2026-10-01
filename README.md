@@ -7,6 +7,7 @@
 ```
 nutrition.csv          栄養素データ（1行 = 1食品）
 rawdata/               食品ラベルの写真（JPG）
+recipes/               自炊メニューのレシピ集（栄養メモ付き）
 scripts/strip_exif.py  JPGからEXIF等のメタデータを除去するスクリプト
 ```
 
