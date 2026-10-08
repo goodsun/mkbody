@@ -9,3 +9,5 @@
 | [プルドビーフ](pulled-beef.md) | プルドビーフ(BBQソース付) | 100g+ソース |
 | [自家製チキンカレー](chicken-curry.md) | 自家製チキンカレー | 全量の1/4 |
 | [魚介豚骨つけ汁](gyokai-tonkotsu-tsukejiru.md) | （スープの達人の代替） | 1杯分 |
+| [プルドポーク＆鶏ももコンフィ コンボパック](pulled-combo-pack.md)（研究中） | （未登録） | 未確定 |
+| [最強BBQソース](bbq-sauce.md)（研究中） | （未登録） | 18g |
