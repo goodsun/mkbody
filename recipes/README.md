@@ -11,3 +11,4 @@
 | [魚介豚骨つけ汁](gyokai-tonkotsu-tsukejiru.md) | （スープの達人の代替） | 1杯分 |
 | [プルドポーク＆鶏ももコンフィ コンボパック](pulled-combo-pack.md)（研究中） | （未登録） | 未確定 |
 | [最強BBQソース](bbq-sauce.md)（研究中） | （未登録） | 18g |
+| [ナスのパルミジャーナ](eggplant-parmigiana.md)（研究中） | （未登録） | 未確定 |
