@@ -22,5 +22,5 @@
 | [昆布締め真鯛のカルパッチョ](kombujime-tai-carpaccio.md)（研究中） | （未登録） | 2人分 |
 | [低温調理タコのカルパッチョ](sous-vide-octopus-carpaccio.md)（研究中） | （未登録） | 2人分 |
 | [低温調理カルボナーラ](sous-vide-carbonara.md)（研究中） | （未登録） | 1人分 |
-| [ジェラート・アッロ・ヨーグルト](gelato-allo-yogurt.md)（研究中） | （未登録） | 約700ml |
+| [ジェラート・アッロ・ヨーグルト](gelato-allo-yogurt.md)（研究中） | （未登録） | 500g（試作） |
 | [コンフィのイタリアンコース](confit-course.md)（研究中） | （コース） | 8皿 |
