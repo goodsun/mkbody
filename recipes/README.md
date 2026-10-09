@@ -12,4 +12,5 @@
 | [プルドポーク＆鶏ももコンフィ コンボパック](pulled-combo-pack.md)（研究中） | （未登録） | 未確定 |
 | [最強BBQソース](bbq-sauce.md)（研究中） | （未登録） | 18g |
 | [ナスのパルミジャーナ](eggplant-parmigiana.md)（研究中） | （未登録） | 未確定 |
+| [低温調理カルボナーラ](sous-vide-carbonara.md)（研究中） | （未登録） | 1人分 |
 | [コンフィのイタリアンコース](confit-course.md)（研究中） | （コース） | 6皿 |
