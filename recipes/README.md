@@ -34,7 +34,8 @@
 | [プルドポーク＆鶏ももコンフィ コンボパック](pulled-combo-pack.md)（研究中） | （未登録） | 未確定 |
 | [最強BBQソース](bbq-sauce.md)（研究中） | （未登録） | 18g |
 | [ナスのパルミジャーナ](eggplant-parmigiana.md)（研究中） | （未登録） | 未確定 |
+| [枝豆の冷製ポタージュ](edamame-potage.md)（研究中） | （未登録） | ひと口×4 |
 | [昆布締め真鯛のカルパッチョ](kombujime-tai-carpaccio.md)（研究中） | （未登録） | 2人分 |
 | [低温調理タコのカルパッチョ](sous-vide-octopus-carpaccio.md)（研究中） | （未登録） | 2人分 |
 | [低温調理カルボナーラ](sous-vide-carbonara.md)（研究中） | （未登録） | 1人分 |
-| [コンフィのイタリアンコース](confit-course.md)（研究中） | （コース） | 6皿 |
+| [コンフィのイタリアンコース](confit-course.md)（研究中） | （コース） | 7皿 |
