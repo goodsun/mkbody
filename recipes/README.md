@@ -13,6 +13,7 @@
 | [低温調理鶏胸肉](low-temp-chicken.md) | 低温調理鶏胸肉(皮なし) | 100g |
 | [プルドポーク](pulled-pork.md) | プルドポーク(BBQソース付) | 100g+ソース |
 | [プルドビーフ](pulled-beef.md) | プルドビーフ(BBQソース付) | 100g+ソース |
+| [牛すね肉のビーフシチュー](beef-stew.md)（研究中） | （未登録） | 1人前 |
 | [自家製チキンカレー](chicken-curry.md) | 自家製チキンカレー | 全量の1/4 |
 | [魚介豚骨つけ汁](gyokai-tonkotsu-tsukejiru.md) | （スープの達人の代替） | 1杯分 |
 | [プルドポークのペンネ](pulled-pork-penne.md) | プルドポークのペンネ | 1人前 |
